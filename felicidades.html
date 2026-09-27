@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para alguien especial ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #100d20, #29203d);
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+    color: #f7e8e8;
+}
+
+.scene {
+    text-align: center;
+    width: 100%;
+    padding: 25px 15px;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: clamp(25px, 5vw, 38px);
+    color: #f7c8df;
+    text-shadow: 0 0 15px #e99acb;
+    margin-bottom: 45px;
+}
+
+/* SOBRE */
+.envelope {
+    position: relative;
+    width: min(310px, 85vw);
+    height: 195px;
+    margin: 0 auto;
+    background: #f5dfb7;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 10px 35px #0008;
+    perspective: 900px;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #e9cda0;
+    clip-path: polygon(0 0, 50% 58%, 100% 0);
+    z-index: 4;
+    transform-origin: top;
+    transition: transform 1s ease;
+}
+
+.envelope::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f0d5a8;
+    clip-path: polygon(0 100%, 0 0, 50% 58%, 100% 0, 100% 100%);
+    z-index: 2;
+}
+
+.seal {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #a82c50;
+    color: white;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    box-shadow: 0 3px 8px #0003;
+    transition: opacity .4s;
+}
+
+.hint {
+    margin-top: 18px;
+    color: #e6c7df;
+    font-size: 15px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: .55; }
+}
+
+/* CARTA */
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 170px;
+    left: 5%;
+    bottom: 10px;
+    background: #fff8e9;
+    color: #493b3b;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 1.2s ease, height 1s ease;
+}
+
+.letter h2 {
+    color: #b75c79;
+    font-family: cursive;
+    font-size: 23px;
+    margin: 0 0 14px;
+}
+
+.letter p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.signature {
+    text-align: right;
+    font-family: cursive;
+    color: #b75c79;
+    font-size: 18px;
+    margin-top: 18px;
+}
+
+/* SOBRE ABIERTO */
+.envelope.open::before {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.envelope.open .seal {
+    opacity: 0;
+}
+
+.envelope.open .letter {
+    height: 380px;
+    transform: translateY(-100px);
+    z-index: 6;
+    overflow-y: auto;
+}
+
+.envelope.open {
+    margin-top: 100px;
+}
+
+.envelope.open + .hint {
+    opacity: 0;
+}
+
+/* BOTÓN */
+button {
+    margin-top: 45px;
+    padding: 12px 24px;
+    border: 1px solid #eab7d4;
+    border-radius: 25px;
+    background: transparent;
+    color: #f7d8e9;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #eab7d4;
+    color: #241529;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #f3a4c9;
+    font-size: 20px;
+    pointer-events: none;
+    animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musica" src="mon.mp3" loop></audio>
+
+<div class="scene">
+
+    <!-- CAMBIA ESTE TEXTO POR EL NOMBRE O APODO DE ELLA -->
+    <h1>Para la persona que ilumina mi universo</h1>
+
+    <div class="envelope" id="envelope" onclick="toggleLetter()">
+
+        <div class="letter">
+
+            <!-- TÍTULO DE LA CARTA -->
+            <h2>Feliz cumpleaños mi tolota</h2>
+
+            <p>
+                Feliz cumpleaños, mi tolita hermosa. Hoy cumples 18 y no sabes lo bonito que se siente poder estar contigo y recordar cómo empezó todo. Quién iba a decir que por un simple meme de “bro respeta” íbamos a terminar aquí, después de tantas cosas y tantos momentos juntos. Al principio ni siquiera nos llevábamos bien en el trabajo y jamás hubiera imaginado que esa persona con la que casi ni me hablaba iba a terminar siendo alguien tan importante para mí.
+                <br><br>
+
+                Poco a poco nos fuimos conociendo, entre pláticas, risas, miradas y momentos que quizá en ese tiempo parecían cualquier cosa, pero que ahora son recuerdos que quiero guardar siempre. Nunca voy a olvidar aquel Cielito Lindo, nuestras primeras salidas al Aurrerá, las caminatas y, sobre todo, ese primer abrazo que me diste. Yo estaba bien nervioso, pero desde ahí sentí algo diferente contigo.
+                <br><br>
+
+                Y cómo olvidar esas tarjas, jajaja. Quién diría que entre trastes sucios, vueltas y esos momentos en los que tú me llevabas los trastes para tener un pretexto de vernos, poco a poco nos fuimos enamorando. Puede sonar como cualquier cosa, pero para mí esos momentos tienen un valor enorme, porque ahí también fuimos construyendo lo nuestro, entre risas, miradas y ese cariño que cada vez se hacía más grande.
+                <br><br>
+
+                Me encanta pensar que nuestro amor empezó de una manera tan sencilla, casi sin darnos cuenta. No hubo un momento exacto en el que dijéramos “ya nos enamoramos”, simplemente pasó. Y entre todo lo que hemos vivido, fui aprendiendo a querer cada parte de ti: tu forma de ser, tus locuras, tus enojos, tus risas, tu manera de quererme y hasta esas pequeñas cosas que solo yo conozco de ti.
+                <br><br>
+
+                Hoy solo quiero que disfrutes mucho tus 18 y que sepas que me hace muy feliz compartir este momento contigo. No sé qué vaya a pasar mañana ni cuántas cosas nos falten por vivir, pero sí sé que quiero seguir haciendo recuerdos contigo, seguir caminando a tu lado, seguir abrazándote y seguir poniéndome nervioso por un beso tuyo aunque pasen los años.
+                <br><br>
+
+                Gracias por llegar a mi vida de esa manera tan inesperada. Quién diría que un “bro respeta” iba a terminar llevándome hasta ti.
+                <br><br>
+
+                Feliz cumpleaños, mi tolita hermosa. Te amo muchísimo. Eres lo mejor de mi vida y de mi corazón. Agradezco cada momento a tu lado y agradezco muchísimo haberte encontrado en este mundo tan grande, porque entre tantas personas, la vida hizo que nuestros caminos se encontraran y tú terminaste siendo esa luz que ilumina mi vida.
+                <br><br>
+
+                Te amo mucho, mi tolita. Espero que algún día podamos mirar atrás y decir: “neta, mira todo lo que vivimos”, y reírnos de pensar que todo empezó por un simple meme, unas tarjas, unos trastes sucios y dos personas que ni siquiera se llevaban bien.
+            </p>
+
+            <!-- FIRMA -->
+            <div class="signature">
+                Con mucho amor,<br>
+                tu negrito 💕
+            </div>
+
+        </div>
+
+        <!-- SELLO DEL SOBRE -->
+        <div class="seal">♥</div>
+    </div>
+
+    <div class="hint" id="hint">
+        Toca el sobre para abrir tu carta 💌
+    </div>
+
+    <!-- BOTÓN PARA CERRAR Y VOLVER A ABRIR -->
+    <button onclick="toggleLetter()">
+        Cerrar / Abrir carta
+    </button>
+
+</div>
+
+<script>
+const envelope = document.getElementById("envelope");
+
+function toggleLetter() {
+    envelope.classList.toggle("open");
+    document.getElementById("musica").play();
+}
+
+// CORAZONES FLOTANTES
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+}
+
+// Genera corazones cada cierto tiempo
+setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
